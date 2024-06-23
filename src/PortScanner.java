@@ -7,10 +7,10 @@ public class PortScanner {
 
         for (int port = startPort; port <= endPort; port++) {
             try (Socket socket = new Socket()) {
-                socket.connect(new InetSocketAddress(target, port, 1000));
-                System.out.println("Port" + port + "is open.");
+                socket.connect(new InetSocketAddress(target, port));
+                System.out.println("Port" + port + " is open.");
             } catch (Exception e) {
-                System.out.println("Port " + port + "Is closed.");
+                System.out.println("Port " + port + " is closed.");
             }
         }
     }
@@ -21,7 +21,7 @@ public class PortScanner {
 
     public static void main (String[] args)
     {
-        String target = "TARGET HOST";
-        scanPorts(target, 80, 100)
+        String target = "";
+        scanPorts(target);
     }
 }

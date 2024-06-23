@@ -9,7 +9,7 @@ public class PortScanner {
 
         for (int port = startPort; port <= endPort; port++) {
             try (Socket socket = new Socket()) {
-                socket.connect(new InetSocketAddress(target, port));
+                socket.connect(new InetSocketAddress(target, port), TIMEOUT);
                 System.out.println("Port" + port + " is open.");
             } catch (Exception e) {
                 System.out.println("Port " + port + " is closed.");

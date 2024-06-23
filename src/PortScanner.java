@@ -3,6 +3,8 @@ import java.net.InetSocketAddress;
 
 public class PortScanner {
 
+    private static final int TIMEOUT = 200; // Timeout in milliseconds
+
     public static void scanPorts (String target, int startPort, int endPort) {
 
         for (int port = startPort; port <= endPort; port++) {
